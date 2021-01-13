@@ -1,3 +1,13 @@
 @import url("/scss/fonts.scss");
 @import url("/scss/vars.scss");
 @import url("/scss/media.scss");
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
