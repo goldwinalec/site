@@ -10,7 +10,7 @@ body, .services__list {
   font-weight: 500;
 }
 
-.main__title, .title {
+.main__title, .title, .table__title {
   font-family: "Montserrat-Semibold", sans-serif;
   font-style: normal;
   font-weight: 600;
@@ -344,4 +344,57 @@ ul, li {
 
 .footer__policy {
   text-align: center;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  padding: 20px 0 0;
+  background-color: rgba(51, 51, 51, 0.8);
+  -webkit-backdrop-filter: blur(30px);
+          backdrop-filter: blur(30px);
+}
+
+.modal__table {
+  font-size: 12px;
+  border-spacing: 0;
+}
+
+.table__row {
+  vertical-align: top;
+}
+
+.modal__close {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+}
+
+.modal__mockups {
+  margin-top: 15px;
+  position: relative;
+}
+
+.devices__laptop {
+  background-image: url("/images/laptop.svg");
+  background-repeat: no-repeat;
+  -webkit-background-size: 100% 100%;
+          background-size: 100% 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.mockups__laptop {
+  width: 100%;
+  height: 100%;
+}
+
+.mockups__mobile {
+  height: 330px;
+  width: 235px;
 }
