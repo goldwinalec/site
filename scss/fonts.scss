@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "Raleway-Light";
+  font-weight: 300;
+  font-display: swap;
+  src: url("/fonts/Raleway-Light.woff2") format("woff2"),
+    url("/fonts/Raleway-Light.woff") format("woff");
+}
+@font-face {
+  font-family: "Raleway-Regular";
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/Raleway-Regular.woff2") format("woff2"),
+    url("/fonts/Raleway-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Montserrat-Medium";
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/Montserrat-Medium.woff2") format("woff2"),
+    url("/fonts/Montserrat-Medium.woff") format("woff");
+}
+@font-face {
+  font-family: "Montserrat-Semibold";
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/Montserrat-Semibold.woff2") format("woff2"),
+    url("/fonts/Montserrat-Semibold.woff") format("woff");
+}
+@font-face {
+  font-family: "Montserrat-Boldold";
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/Montserrat-Boldold.woff2") format("woff2"),
+    url("/fonts/Montserrat-Boldold.woff") format("woff");
+}
