@@ -74,7 +74,7 @@ body {
 
 body.light {
   background-color: #fff;
-  color: #222;
+  color: #333;
 }
 
 a {
@@ -121,7 +121,11 @@ ul, li {
   fill: #333333;
 }
 
-.header__menu-item--disabled {
+.header__menu-item--dark {
+  display: block;
+}
+
+.header__menu-item--light {
   display: none;
 }
 
@@ -215,6 +219,14 @@ ul, li {
   background-color: #333333;
 }
 
+.services.light {
+  background-color: #fafafa;
+}
+
+.technologies.light {
+  background-color: #fafafa;
+}
+
 .services__inner {
   display: -webkit-box;
   display: -webkit-flex;
@@ -228,6 +240,14 @@ ul, li {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.services__img--dark {
+  display: block;
+}
+
+.services__img--light {
+  display: none;
 }
 
 .services__list {
@@ -322,6 +342,14 @@ ul, li {
   font-weight: 400;
   margin-top: 20px;
   text-align: center;
+}
+
+.item__img--dark {
+  display: block;
+}
+
+.item__img--light {
+  display: none;
 }
 
 .footer {
