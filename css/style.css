@@ -68,11 +68,14 @@ body {
   overflow-x: hidden;
   width: 100%;
   height: 100%;
+}
+
+.page--dark {
   background-color: #222222;
   color: #ffffff;
 }
 
-body.light {
+.page--light {
   background-color: #fff;
   color: #333;
 }
@@ -157,6 +160,50 @@ ul, li {
 
 .header__menu-link:hover {
   text-decoration: underline;
+}
+
+.header__theme--dark::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-image: url("/images/switch-dark.svg");
+  content: '';
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+          background-size: cover;
+  background-position: 0 0;
+  z-index: 1000;
+}
+
+.header__theme--dark {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.header__theme--light::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-image: url("/images/switch-light.svg");
+  content: '';
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+          background-size: cover;
+  background-position: 0 0;
+  z-index: 1000;
+}
+
+.header__theme--light {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  display: block;
 }
 
 .main__inner {
@@ -424,7 +471,6 @@ ul, li {
   top: 0;
   bottom: 0;
   left: 0;
-  right: 0;
   height: 100vh;
   padding: 20px 0;
   -webkit-backdrop-filter: blur(30px);
