@@ -293,9 +293,16 @@ margin-top: 0;
     right: 0;
     height: 100vh;
     padding: 20px 0;
-    background-color: rgba(#333333, 0.8);
     backdrop-filter: blur(30px);
     display: none;
+}
+
+.modal--dark {
+    background-color: rgba(#333333, 0.8);
+}
+
+.modal--light{
+        background-color: rgba(#fafafa, 0.8);
 }
 
 .modal__inner{
