@@ -400,4 +400,33 @@ vertical-align: top;
     -o-border-radius: 15px;
 }
 
+.top-btn {
+    background-image: url("/images/top-btn.svg");
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position: center center;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(#aaa, 0.7);
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10000;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.top-btn--visible {
+    display: block;
+}
+
+.top-btn--invisible {
+    display: none;
+}
+
 @import "media";
