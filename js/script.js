@@ -14,6 +14,13 @@ $(".top-btn").click(function () {
     $("html, body").animate({ scrollTop: 0 }, 1000);
 });
 
+$(document).on('click', '.header__menu-link', function () {
+    var linkID = $(this).attr('href');
+    $('html, body').animate({
+        scrollTop: $(linkID).offset().top
+    }, 'slow');
+});
+
 let page = document.querySelector('.page');
 let headerLogo = document.querySelector('.header__logo');
 let services = document.querySelector('.services');
