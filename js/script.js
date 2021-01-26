@@ -23,6 +23,7 @@ let themeButton = document.querySelector('.header__theme');
 let themeImg = document.querySelector('.header__theme');
 let techItems = document.querySelectorAll('.item__img--switch');
 let modal = document.querySelector('.modal');
+
 themeButton.onclick = function () {
     page.classList.toggle('page--dark');
     page.classList.toggle('page--light');
@@ -44,5 +45,21 @@ themeButton.onclick = function () {
     themeImg.classList.toggle('header__theme--light');
     modal.classList.toggle('modal--dark');
     modal.classList.toggle('modal--light');
+    document.cookie = themeButton.onclick;
 };
 
+let projectButtons = document.querySelectorAll('.items__img');
+let closeButton = document.querySelector('.modal__close');
+
+for (let projectButton of projectButtons) {
+    projectButton.onclick = function () {
+        modal.classList.add('modal--opened');
+        page.classList.add('page--disabled');
+    }
+}
+
+closeButton.onclick = function () {
+    modal.classList.remove('modal--opened');
+    page.classList.remove('page--disabled');
+
+}
