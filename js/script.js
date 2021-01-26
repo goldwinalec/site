@@ -21,7 +21,9 @@ let servImgs = document.querySelectorAll('.services__img')
 let technologies = document.querySelector('.technologies');
 let themeButton = document.querySelector('.header__theme');
 let themeImg = document.querySelector('.header__theme');
-let techItems = document.querySelectorAll('.item__img--switch'); themeButton.onclick = function () {
+let techItems = document.querySelectorAll('.item__img--switch');
+let modal = document.querySelector('.modal');
+themeButton.onclick = function () {
     page.classList.toggle('page--dark');
     page.classList.toggle('page--light');
     headerLogo.classList.toggle('header__logo--dark');
@@ -40,5 +42,7 @@ let techItems = document.querySelectorAll('.item__img--switch'); themeButton.onc
     };
     themeImg.classList.toggle('header__theme--dark');
     themeImg.classList.toggle('header__theme--light');
+    modal.classList.toggle('modal--dark');
+    modal.classList.toggle('modal--light');
 };
 

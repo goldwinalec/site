@@ -339,15 +339,13 @@ margin-top: 0;
     height: 100vh;
     padding: 20px 0;
     backdrop-filter: blur(30px);
-    // display: none;
-}
-
-.modal--dark {
+    display: none;
+    z-index: 100000;
     background-color: rgba(#333333, 0.8);
 }
 
 .modal--light{
-        background-color: rgba(#fafafa, 0.8);
+        color: #fff;
 }
 
 .modal__inner{
