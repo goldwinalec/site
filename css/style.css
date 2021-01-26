@@ -309,7 +309,8 @@ ul, li {
   margin-top: 15px;
 }
 
-.services__list-item {
+.services__list-item,
+.table__list-item {
   list-style-type: "\2014";
   padding-left: 10px;
 }
