@@ -22,7 +22,7 @@ let technologies = document.querySelector('.technologies');
 let themeButton = document.querySelector('.header__theme');
 let themeImg = document.querySelector('.header__theme');
 let techItems = document.querySelectorAll('.item__img--switch');
-let modal = document.querySelector('.modal');
+let modal = document.querySelectorAll('.modal');
 
 themeButton.onclick = function () {
     page.classList.toggle('page--dark');
@@ -43,8 +43,10 @@ themeButton.onclick = function () {
     };
     themeImg.classList.toggle('header__theme--dark');
     themeImg.classList.toggle('header__theme--light');
-    modal.classList.toggle('modal--dark');
-    modal.classList.toggle('modal--light');
+    modal.forEach(function (item) {
+        item.classList.toggle('modal--dark')
+        item.classList.toggle('modal--light');
+    });
 };
 
 let projectButtons = document.querySelectorAll('.items__img');
@@ -56,6 +58,7 @@ for (let projectButton of projectButtons) {
         let modalName = this.getAttribute('data-modal');
         let modal = document.querySelector(`.modal[data-modal="` + modalName + `"]`);
         modal.classList.add('modal--opened');
+        page.classList.add('page--disabled');
         modal.addEventListener("click", (event) => {
             if (event.target.closest(".modal__close") ||
                 event.target.classList.contains("modal__inner") ||

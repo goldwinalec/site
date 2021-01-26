@@ -522,6 +522,10 @@ ul, li {
   margin-top: 5px;
 }
 
+.table__link {
+  text-decoration: underline;
+}
+
 .modal__close {
   position: fixed;
   right: 20px;
