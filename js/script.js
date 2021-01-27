@@ -113,4 +113,17 @@ $(window).on('load resize', function() {
     $("#slider.slick-initialized").slick("unslick");
   }
 });
+
+// мобильное меню
+  $(".header__nav-toggle").on("click", function () {
+    $("body").toggleClass("page--disabled");
+    $(".header__menu").toggleClass("header__menu--visible");
+    $(".header__nav-line").toggleClass("header__nav-line--active");
+  });
+
+  $(".header__menu-link").on("click", function () {
+    $(".header__menu").toggleClass("header__menu--visible");
+    $(".header__nav-line").toggleClass("header__nav-line--active");
+    $("body").removeClass("page--disabled");
+  });
 			
