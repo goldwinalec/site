@@ -1,3 +1,4 @@
+// кнопка возврата к началу страницы
 $(".top-btn").removeClass("top-btn--visible");
 
 $(window).scroll(function () {
@@ -14,6 +15,7 @@ $(".top-btn").click(function () {
     $("html, body").animate({ scrollTop: 0 }, 1000);
 });
 
+// плавный переход по якорям
 $(document).on('click', '.header__menu-link', function () {
     var linkID = $(this).attr('href');
     $('html, body').animate({
@@ -21,6 +23,7 @@ $(document).on('click', '.header__menu-link', function () {
     }, 'slow');
 });
 
+// переключатель темы
 let page = document.querySelector('.page');
 let headerLogo = document.querySelector('.header__logo');
 let services = document.querySelector('.services');
@@ -56,6 +59,8 @@ themeButton.onclick = function () {
     });
 };
 
+
+// открытие-закрытие модального окна
 let projectButtons = document.querySelectorAll('.items__img');
 let closeButton = document.querySelector('.modal__close');
 
@@ -76,3 +81,20 @@ for (let projectButton of projectButtons) {
         });
     }
 }
+
+// slick-slider
+$(window).on('load resize', function() {
+  if ($(window).width() < 769) {
+    $('#slider:not(.slick-initialized)').slick({
+      dots: true,
+      infinite: true,
+      speed: 2000,
+      slidesToShow: 3,
+      slidesToScroll: 3,
+      arrows: false
+    });
+  } else {
+    $("#slider.slick-initialized").slick("unslick");
+  }
+});
+			

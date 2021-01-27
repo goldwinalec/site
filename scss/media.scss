@@ -1,55 +1,85 @@
 @media (max-width: 990px) {
-    .projects__items {
-        grid-template-columns: 300px 300px;
-        gap: 20px;
-        justify-content: center;
-    }
-    .items__img:nth-child(1){
-        margin-top: 0;
-    }
-    .items__img:nth-child(3){
-        margin-top: 0;
-    }
-    .items__img:nth-child(5){
-        margin-top: 0;
-    }
-    .item__img{
-        width: 50px;
-    }
-    .footer__social{
-        flex-wrap: wrap;
-    }
-    .social-list__item {
-        margin-bottom: 20px;
-    }
-    .services__img{
-        width: 50%;
-        height: 100%;
-    }
+  .main__title {
+    font-size: 35px;
+    line-height: 42px;
+    width: 400px;
+  }
+  .main__text {
+    display: inline-block;
+    font-size: 25px;
+    line-height: 30px;
+  }
+  .main__inner {
+    justify-content: center;
+  }
+  .title {
+    margin-bottom: 60px;
+  }
+  .services,
+  .projects,
+  .technologies {
+    padding: 60px 0;
+  }
+  .projects__items {
+    grid-template-columns: 300px 300px;
+    gap: 20px;
+    justify-content: center;
+  }
+  .items__img:nth-child(1) {
+    margin-top: 0;
+  }
+  .items__img:nth-child(3) {
+    margin-top: 0;
+  }
+  .items__img:nth-child(5) {
+    margin-top: 0;
+  }
+  .item__img {
+    width: 50px;
+  }
+  .footer__social {
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+  }
+  .social-list__item {
+    margin-bottom: 20px;
+  }
+  .services__img {
+    width: 50%;
+    height: 100%;
+  }
 }
 
 @media (max-width: 768px) {
-    .main__img{
-        width: 200px;
-    }
-    .services__inner {
-        flex-wrap: wrap;
-    }
-    .services__img{
-        margin-bottom: 20px;
-    }
-    .services__list{
-        margin-left: 0;
-    }
-    
-
+  .main__img {
+    width: 200px;
+  }
+  .services__inner {
+    flex-wrap: wrap;
+  }
+  .services__img {
+    margin-bottom: 20px;
+  }
+  .services__list {
+    margin-left: 0;
+  }
+  .header__menu-item + .header__menu-item {
+    margin-left: 20px;
+  }
+  .header__menu-item {
+    font-size: 16px;
+  }
+  .projects__items {
+    display: block;
+  }
+  .items__img {
+    margin: 0 10px;
+    width: 300px;
+  }
 }
 @media (max-width: 576px) {
-
 }
 @media (max-width: 756px) {
-
 }
 @media (max-width: 756px) {
-
 }

@@ -56,7 +56,9 @@ html {
           box-sizing: border-box;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -88,7 +90,8 @@ a {
   text-decoration: none;
 }
 
-ul, li {
+ul,
+li {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -172,7 +175,7 @@ ul, li {
   width: 20px;
   height: 20px;
   background-image: url("/images/switch-dark.svg");
-  content: '';
+  content: "";
   background-repeat: no-repeat;
   -webkit-background-size: cover;
           background-size: cover;
@@ -194,7 +197,7 @@ ul, li {
   width: 20px;
   height: 20px;
   background-image: url("/images/switch-light.svg");
-  content: '';
+  content: "";
   background-repeat: no-repeat;
   -webkit-background-size: cover;
           background-size: cover;
@@ -238,7 +241,7 @@ ul, li {
   font-size: 30px;
   line-height: 37px;
   color: #222222;
-  background: #ECD6B6;
+  background: #ecd6b6;
   padding: 5px 10px;
 }
 
@@ -636,6 +639,30 @@ ul, li {
 }
 
 @media (max-width: 990px) {
+  .main__title {
+    font-size: 35px;
+    line-height: 42px;
+    width: 400px;
+  }
+  .main__text {
+    display: inline-block;
+    font-size: 25px;
+    line-height: 30px;
+  }
+  .main__inner {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .title {
+    margin-bottom: 60px;
+  }
+  .services,
+  .projects,
+  .technologies {
+    padding: 60px 0;
+  }
   .projects__items {
     -ms-grid-columns: 300px 300px;
         grid-template-columns: 300px 300px;
@@ -661,6 +688,7 @@ ul, li {
     -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
             flex-wrap: wrap;
+    margin-bottom: 60px;
   }
   .social-list__item {
     margin-bottom: 20px;
@@ -685,5 +713,21 @@ ul, li {
   }
   .services__list {
     margin-left: 0;
+  }
+  .header__menu-item + .header__menu-item {
+    margin-left: 20px;
+  }
+  .header__menu-item {
+    font-size: 16px;
+  }
+  .projects__items {
+    display: block;
+  }
+  .items__img {
+    margin: 0 10px;
+    width: 300px;
+  }
+  .slick-dots li button {
+    background-color: #aaaaaa;
   }
 }
