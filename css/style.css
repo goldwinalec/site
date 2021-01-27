@@ -150,10 +150,7 @@ li {
 }
 
 .header__nav-toggle {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
@@ -430,21 +427,20 @@ li {
 }
 
 .technologies__items {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[5];
-      grid-template-columns: repeat(5, 1fr);
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  grid-gap: 10px;
-  max-width: 650px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  gap: 20px;
+  max-width: 500px;
   margin: 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .technologies__item {
@@ -467,18 +463,16 @@ li {
           justify-content: space-between;
 }
 
-.technologies__item:nth-child(11) {
-  -ms-grid-column: 1;
-      grid-column-start: 1;
-  grid-column-end: 6;
-  -ms-grid-row: 3;
-      grid-row-start: 3;
+.item__title {
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 10px;
+  text-align: center;
 }
 
-.item__title {
-  font-weight: 400;
-  margin-top: 20px;
-  text-align: center;
+.item__img {
+  height: 75px;
+  width: 75px;
 }
 
 .item__img--dark {
@@ -769,6 +763,7 @@ li {
   }
   .item__img {
     width: 50px;
+    height: 50px;
   }
   .footer__social {
     -webkit-flex-wrap: wrap;
@@ -816,9 +811,12 @@ li {
   .slick-dots li button:before {
     font-size: 25px;
     line-height: 32px;
+    color: #e8cba0;
+    opacity: 1;
   }
-  .slick-dots.slick-dots--dark li button:before {
-    color: #ffffff;
+  .slick-dots li.slick-active button:before {
+    color: #e0ad62;
+    opacity: 1;
   }
 }
 
@@ -848,6 +846,12 @@ li {
     margin: 0;
     margin-top: 30px;
   }
+  .header__nav-toggle {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
   .main__inner {
     padding: 35px 0;
     -webkit-box-orient: vertical;
@@ -876,52 +880,11 @@ li {
     font-size: 20px;
     line-height: 26px;
   }
-  .technologies__item {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: start;
-    -webkit-justify-content: start;
-        -ms-flex-pack: start;
-            justify-content: start;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
   .technologies__items {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: start;
-    -webkit-justify-content: start;
-        -ms-flex-pack: start;
-            justify-content: start;
-    -webkit-box-align: start;
-    -webkit-align-items: flex-start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-    height: 200px;
-    margin: 0 45px;
-  }
-  .item__img {
-    width: 25px;
-    margin-right: 10px;
+    gap: 10px;
   }
   .item__title {
-    margin: 0;
-    font-size: 16px;
+    display: none;
   }
   .social-list__link {
     font-size: 16px;
@@ -943,7 +906,7 @@ li {
     -webkit-align-items: flex-start;
         -ms-flex-align: start;
             align-items: flex-start;
-    margin: 0 45px;
+    margin: 0 10px;
   }
   .social-list__item + .social-list__item {
     margin-left: 0px;
@@ -978,6 +941,9 @@ li {
   .footer {
     padding: 35px 0 10px;
   }
+  .services__list {
+    margin-left: 20px;
+  }
 }
 
 @media (max-width: 380px) {
@@ -1006,6 +972,20 @@ li {
   .item__title,
   .social-list__link {
     font-size: 14px;
+  }
+  .technologies__inner {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .footer__policy {
     font-size: 10px;
