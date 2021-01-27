@@ -83,6 +83,12 @@ li {
   align-items: center;
 }
 
+.header__nav-line {
+  width: 16px;
+  height: 1px;
+  background-color: #aaa;
+}
+
 .header__menu {
   display: flex;
   align-items: center;
@@ -94,6 +100,10 @@ li {
 
 .header__menu-link:hover {
   text-decoration: underline;
+}
+
+.header__theme:hover {
+  cursor: pointer;
 }
 
 .header__theme--dark::before {

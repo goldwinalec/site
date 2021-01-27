@@ -33,8 +33,8 @@ let themeButton = document.querySelector('.header__theme');
 let themeImg = document.querySelector('.header__theme');
 let techItems = document.querySelectorAll('.item__img--switch');
 let modal = document.querySelectorAll('.modal');
-
-themeButton.onclick = function () {
+themeButton.onclick = function (event) {
+    event.preventDefault();
     page.classList.toggle('page--dark');
     page.classList.toggle('page--light');
     headerLogo.classList.toggle('header__logo--dark');
@@ -91,7 +91,23 @@ $(window).on('load resize', function() {
       speed: 2000,
       slidesToShow: 3,
       slidesToScroll: 3,
-      arrows: false
+      arrows: false,
+      responsive: [
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
     });
   } else {
     $("#slider.slick-initialized").slick("unslick");
