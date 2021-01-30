@@ -873,7 +873,7 @@ li {
     width: 300px;
   }
   .slick-dots li button:before {
-    font-size: 25px;
+    font-size: 14px;
     line-height: 32px;
     color: #e8cba0;
     opacity: 1;
