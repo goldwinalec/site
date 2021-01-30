@@ -286,6 +286,14 @@
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
   }
+  .modal__inner {
+    justify-content: flex-start;
+  }
+  .table {
+    margin-top: 0;
+    font-size: 10px;
+    line-height: 14px;
+  }
 }
 
 @media (max-width: 380px) {
