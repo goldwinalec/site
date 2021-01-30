@@ -322,6 +322,8 @@ li {
 }
 
 .main__img {
+  width: 350px;
+  height: 350px;
   border-radius: 100%;
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
