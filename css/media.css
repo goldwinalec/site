@@ -107,6 +107,7 @@
 @media (max-width: 768px) {
   .main__img {
     width: 200px;
+    height: 200px;
   }
   .services__inner {
     -webkit-flex-wrap: wrap;
