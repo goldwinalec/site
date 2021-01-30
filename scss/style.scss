@@ -269,6 +269,10 @@ li {
   margin-top: 15px;
 }
 
+.table__list {
+  padding-inline-start: 10px;
+}
+
 .services__list-item,
 .table__list-item {
   list-style-type: "\2014";
@@ -429,8 +433,8 @@ li {
   @extend %montserrat-semibold;
 }
 
-.table__list-item + .table__list-item {
-  margin-top: 5px;
+.table__list {
+  margin: 0;
 }
 
 .table__link {
@@ -445,7 +449,6 @@ li {
 }
 
 .modal__mockups {
-  margin-top: 15px;
   position: relative;
   display: flex;
   align-items: center;
@@ -461,10 +464,18 @@ li {
 
 .devices__laptop-screen {
   width: 390px;
-  height: 258px;
+  height: 253px;
   margin: 0 auto;
-  padding-top: 12px;
+  margin-top: 8px;
   display: block;
+  position: relative;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .mockups__devices {
@@ -472,13 +483,12 @@ li {
 }
 
 .mockups__laptop {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
   width: 100%;
-  height: 100%;
-  border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
 }
 
 .devices__mobile {
@@ -487,24 +497,33 @@ li {
   background-size: 100% 100%;
   width: 146px;
   height: 293px;
+  z-index: 1000;
 }
 
 .devices__mobile-screen {
-  width: 128px;
-  height: 286px;
+  width: 129px;
+  height: 280px;
   margin: 0 auto;
-  padding-top: 7px;
+  margin-top: 7px;
   display: block;
-}
-
-.mockups__mobile {
-  height: 100%;
-  width: 100%;
+  position: relative;
   border-radius: 15px;
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
   -ms-border-radius: 15px;
   -o-border-radius: 15px;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  z-index: -1;
+}
+
+.mockups__mobile {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
 
 .top-btn {
