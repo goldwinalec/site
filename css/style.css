@@ -1050,6 +1050,7 @@ li {
   }
   .modal {
     overflow-y: scroll;
+    padding-top: 50px;
   }
   .devices__mobile {
     width: 320px;
