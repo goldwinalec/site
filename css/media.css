@@ -270,11 +270,11 @@
     margin-left: 20px;
   }
   .modal__inner {
-    -webkit-box-orient: horizontal;
+    -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   .modal__mockups {
     -webkit-box-orient: vertical;
@@ -286,6 +286,9 @@
     -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
+  }
+  .mockups__devices {
+    margin: 5px;
   }
 }
 

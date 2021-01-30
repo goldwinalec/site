@@ -1024,6 +1024,9 @@ li {
         -ms-flex-pack: center;
             justify-content: center;
   }
+  .mockups__devices {
+    margin: 5px;
+  }
 }
 
 @media (max-width: 380px) {
