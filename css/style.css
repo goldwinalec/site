@@ -51,11 +51,6 @@ body, .services__list {
   src: url("/fonts/Montserrat-Boldold.woff2") format("woff2"), url("/fonts/Montserrat-Boldold.woff") format("woff");
 }
 
-html {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
 *,
 *::before,
 *::after {
@@ -64,6 +59,8 @@ html {
 }
 
 body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   overflow-x: hidden;
   font-size: 18px;
   line-height: 22px;

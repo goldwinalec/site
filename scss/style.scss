@@ -1,10 +1,6 @@
 @import "vars";
 @import "fonts";
 
-html {
-  box-sizing: border-box;
-}
-
 *,
 *::before,
 *::after {
@@ -12,6 +8,7 @@ html {
 }
 
 body {
+  box-sizing: border-box;
   overflow-x: hidden;
   @extend %raleway-regular;
   font-size: 18px;
