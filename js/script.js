@@ -1,5 +1,3 @@
-$(document).ready(function(){
-
 // кнопка возврата к началу страницы
 $(".top-btn").removeClass("top-btn--visible");
 
@@ -108,7 +106,6 @@ $('.feedback__items').slick({
       $("body").removeClass("page--disabled");
     });
   });
-});
 // переключатель темы
 let page = document.querySelector('.page');
 let headerLogo = document.querySelector('.header__logo');
