@@ -291,8 +291,7 @@ li {
 }
 
 .items__img:hover {
-  box-shadow: 0px 0px 15px 3px #666;
-  -webkit-box-shadow: 0px 0px 15px 3px #666;
+  box-shadow: 3px 3px 7px 0px #666;
   cursor: pointer;
 }
 
@@ -341,6 +340,60 @@ li {
 
 .item__img--light {
   display: none;
+}
+
+.feedback {
+  padding: 80px 0;
+}
+
+.feedback__item {
+  background-color: #fff;
+  color: #333;
+  padding: 20px;
+  padding-bottom: 50px;
+  position: relative;
+}
+
+.feedback__item.slick-slide {
+  margin: 0 25px;
+  box-shadow: 3px 3px 7px 0px #666;
+  height: unset;
+}
+
+.feedback__items .slick-track {
+  justify-content: stretch;
+  display: flex;
+}
+
+.feedback__items .slick-list {
+  overflow: visible;
+}
+
+.feedback__item::before {
+  position: absolute;
+  content: "";
+  width: 30px;
+  height: 27px;
+  background-image: url("/images/quote.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  left: -7px;
+  top: -18px;
+}
+
+.feedback__text {
+  margin: 0;
+  padding: 0;
+}
+
+.feedback__link {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.feedback__author {
+  color: #000;
 }
 
 .footer {

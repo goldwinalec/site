@@ -1,35 +1,3 @@
-// @media (min-width: 1024px) {
-//   .devices__laptop-screen::-webkit-scrollbar,
-//   .devices__mobile-screen::-webkit-scrollbar {
-//     width: 12px;
-//     background-color: #ccc;
-//     border-radius: 0 3px 3px 0;
-//     -webkit-border-radius: 0 3px 3px 0;
-//     -moz-border-radius: 0 3px 3px 0;
-//     -ms-border-radius: 0 3px 3px 0;
-//     -o-border-radius: 0 3px 3px 0;
-//   }
-
-//   .devices__laptop-screen::-webkit-scrollbar-thumb,
-//   .devices__mobile-screen::-webkit-scrollbar-thumb {
-//     background: #666;
-//     border-radius: 3px;
-//     -webkit-border-radius: 3px;
-//     -moz-border-radius: 3px;
-//     -ms-border-radius: 3px;
-//     -o-border-radius: 3px;
-//     overflow: hidden;
-//   }
-
-//   .devices__mobile-screen::-webkit-scrollbar {
-//     border-radius: 0 15px 15px 0;
-//     -webkit-border-radius: 0 15px 15px 0;
-//     -moz-border-radius: 0 15px 15px 0;
-//     -ms-border-radius: 0 15px 15px 0;
-//     -o-border-radius: 0 15px 15px 0;
-//   }
-// }
-
 @media (max-width: 1024px) {
   .modal__inner {
     flex-direction: column-reverse;
@@ -120,6 +88,12 @@
   }
 }
 
+@media (max-width: 800px) {
+  .feedback__item.slick-slide {
+    margin: 0 10px;
+  }
+}
+
 @media (max-width: 768px) {
   .main__img {
     width: 200px;
@@ -148,10 +122,14 @@
     width: 300px;
   }
   .slick-dots li button:before {
-    font-size: 14px;
+    font-size: 7px;
     line-height: 32px;
     color: #e8cba0;
     opacity: 1;
+  }
+  .slick-dots li {
+    width: 7px;
+    height: 7px;
   }
   .slick-dots li.slick-active button:before {
     color: #e0ad62;
@@ -234,7 +212,8 @@
   }
   .services,
   .projects,
-  .technologies {
+  .technologies,
+  .feedback {
     padding: 50px 0;
   }
   .footer {
