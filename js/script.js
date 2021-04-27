@@ -1,3 +1,5 @@
+$(document).ready(function(){
+
 // кнопка возврата к началу страницы
 $(".top-btn").removeClass("top-btn--visible");
 
@@ -23,41 +25,6 @@ $(document).on('click', '.header__menu-link', function () {
     }, 'slow');
 });
 
-// переключатель темы
-let page = document.querySelector('.page');
-let headerLogo = document.querySelector('.header__logo');
-let services = document.querySelector('.services');
-let servImgs = document.querySelectorAll('.services__img')
-let technologies = document.querySelector('.technologies');
-let themeButton = document.querySelector('.header__theme');
-let themeImg = document.querySelector('.header__theme');
-let techItems = document.querySelectorAll('.item__img--switch');
-let modal = document.querySelectorAll('.modal');
-themeButton.onclick = function (event) {
-    event.preventDefault();
-    page.classList.toggle('page--dark');
-    page.classList.toggle('page--light');
-    headerLogo.classList.toggle('header__logo--dark');
-    headerLogo.classList.toggle('header__logo--light');
-    services.classList.toggle('services--dark');
-    services.classList.toggle('services--light');
-    technologies.classList.toggle('technologies--dark');
-    technologies.classList.toggle('technologies--light');
-    for (let techItem of techItems) {
-        techItem.classList.toggle('item__img--dark');
-        techItem.classList.toggle('item__img--light');
-    };
-    for (let servImg of servImgs) {
-        servImg.classList.toggle('services__img--dark');
-        servImg.classList.toggle('services__img--light');
-    };
-    themeImg.classList.toggle('header__theme--dark');
-    themeImg.classList.toggle('header__theme--light');
-    modal.forEach(function (item) {
-        item.classList.toggle('modal--dark')
-        item.classList.toggle('modal--light');
-    });
-};
 
 
 // открытие-закрытие модального окна
@@ -112,6 +79,8 @@ $(window).on('load resize', function() {
   }
 });
 
+
+
 // мобильное меню
   $(".header__nav-toggle").on("click", function () {
     $("body").toggleClass("page--disabled");
@@ -123,5 +92,40 @@ $(window).on('load resize', function() {
       $("body").removeClass("page--disabled");
     });
   });
-
+});
+// переключатель темы
+let page = document.querySelector('.page');
+let headerLogo = document.querySelector('.header__logo');
+let services = document.querySelector('.services');
+let servImgs = document.querySelectorAll('.services__img')
+let technologies = document.querySelector('.technologies');
+let themeButton = document.querySelector('.header__theme');
+let themeImg = document.querySelector('.header__theme');
+let techItems = document.querySelectorAll('.item__img--switch');
+let modal = document.querySelectorAll('.modal');
+themeButton.onclick = function (event) {
+    event.preventDefault();
+    page.classList.toggle('page--dark');
+    page.classList.toggle('page--light');
+    headerLogo.classList.toggle('header__logo--dark');
+    headerLogo.classList.toggle('header__logo--light');
+    services.classList.toggle('services--dark');
+    services.classList.toggle('services--light');
+    technologies.classList.toggle('technologies--dark');
+    technologies.classList.toggle('technologies--light');
+    for (let techItem of techItems) {
+        techItem.classList.toggle('item__img--dark');
+        techItem.classList.toggle('item__img--light');
+    };
+    for (let servImg of servImgs) {
+        servImg.classList.toggle('services__img--dark');
+        servImg.classList.toggle('services__img--light');
+    };
+    themeImg.classList.toggle('header__theme--dark');
+    themeImg.classList.toggle('header__theme--light');
+    modal.forEach(function (item) {
+        item.classList.toggle('modal--dark')
+        item.classList.toggle('modal--light');
+    });
+};
     
