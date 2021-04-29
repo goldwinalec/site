@@ -85,7 +85,9 @@
     <meta name="msapplication-config" content="/browserconfig.xml" />
     <link rel="stylesheet" href="/css/normalize.css" />
     <link rel="stylesheet" href="/css/slick-theme.css" />
+
     <link rel="stylesheet" href="/css/slick.css" />
+    <link rel="stylesheet" href="/css/swiper.min.css" />
     <link rel="stylesheet" href="/css/style.css" />
   </head>
 
@@ -295,43 +297,46 @@
     <section class="feedback" id="feedback">
       <div class="container">
         <h2 class="feedback__title title">Отзывы</h2>
-        <div class="feedback__items">
-          <div class="feedback__item feedback__item--avito">
-            <p class="feedback__text">
-              Грамотный, отзывчивый специалист. Работает четко и качественно,
-              предоплату в данном случае считаю вполне справедливой. Остался
-              доволен :)
-              <span class="feedback__author">&mdash; Максим</span>
-            </p>
-            <a
-              href="https://www.avito.ru/user/b285ab4ba433742251fb1640a9ac8f60/profile?id=2037379224&src=item&page_from=from_item_card&iid=2037379224"
-              class="feedback__link"
-              target="_blank"
-              ><img
-                src="/images/avito.svg"
-                alt="Avito"
-                class="img__feedback__link-img"
-            /></a>
+        <div class="feedback__items swiper-container">
+          <div class="swiper-wrapper">
+            <div class="feedback__item feedback__item--avito swiper-slide">
+              <p class="feedback__text">
+                Грамотный, отзывчивый специалист. Работает четко и качественно,
+                предоплату в данном случае считаю вполне справедливой. Остался
+                доволен :)
+                <span class="feedback__author">&mdash; Максим</span>
+              </p>
+              <a
+                href="https://www.avito.ru/user/b285ab4ba433742251fb1640a9ac8f60/profile?id=2037379224&src=item&page_from=from_item_card&iid=2037379224"
+                class="feedback__link"
+                target="_blank"
+                ><img
+                  src="/images/avito.svg"
+                  alt="Avito"
+                  class="img__feedback__link-img"
+              /></a>
+            </div>
+            <div class="feedback__item feedback__item--avito swiper-slide">
+              <p class="feedback__text">
+                Алина очень быстро сверстала лендинг, по-человечески отзывчиво
+                общалась. Верстка сделана качественно и разумно просто для моего
+                конкретного лендинга, хорошо ведет репозиторий, сразу же в
+                момент начала работы дала ссылку на просмотр прогресса. Молодец,
+                рекомендую.
+                <span class="feedback__author">&mdash; Илья</span>
+              </p>
+              <a
+                href="https://www.avito.ru/user/b285ab4ba433742251fb1640a9ac8f60/profile?id=2037379224&src=item&page_from=from_item_card&iid=2037379224"
+                class="feedback__link"
+                target="_blank"
+                ><img
+                  src="/images/avito.svg"
+                  alt="Avito"
+                  class="img__feedback__link-img"
+              /></a>
+            </div>
           </div>
-          <div class="feedback__item feedback__item--avito">
-            <p class="feedback__text">
-              Алина очень быстро сверстала лендинг, по-человечески отзывчиво
-              общалась. Верстка сделана качественно и разумно просто для моего
-              конкретного лендинга, хорошо ведет репозиторий, сразу же в момент
-              начала работы дала ссылку на просмотр прогресса. Молодец,
-              рекомендую.
-              <span class="feedback__author">&mdash; Илья</span>
-            </p>
-            <a
-              href="https://www.avito.ru/user/b285ab4ba433742251fb1640a9ac8f60/profile?id=2037379224&src=item&page_from=from_item_card&iid=2037379224"
-              class="feedback__link"
-              target="_blank"
-              ><img
-                src="/images/avito.svg"
-                alt="Avito"
-                class="img__feedback__link-img"
-            /></a>
-          </div>
+          <div class="swiper-pagination"></div>
         </div>
       </div>
     </section>
@@ -816,6 +821,7 @@
 
     <script src="/js/jquery.js"></script>
     <script src="/js/slick.min.js"></script>
+    <script src="/js/swiper.min.js"></script>
     <script src="/js/script.js"></script>
   </body>
 </html>

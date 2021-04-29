@@ -396,6 +396,28 @@ li {
   color: #000;
 }
 
+.swiper-container {
+  overflow: visible;
+}
+
+.swiper-slide {
+  height: unset;
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: -30px;
+}
+
+.swiper-pagination-bullet {
+  background-color: #e8cba0;
+}
+
+.swiper-pagination-bullet-active {
+  background: #e0ad62;
+}
+
 .footer {
   background-color: #e0bc86;
   padding: 70px 0 15px;

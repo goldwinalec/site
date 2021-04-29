@@ -91,6 +91,16 @@ $(window).on('load resize', function() {
 //   ]
 // });
 
+const swiper = new Swiper('.swiper-container', {
+  slidesPerView: 1,
+  spaceBetween: 30,
+  loop: true,
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+});
+
 // мобильное меню
   $(".header__nav-toggle").on("click", function () {
     $("body").toggleClass("page--disabled");
