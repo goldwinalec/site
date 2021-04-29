@@ -46,59 +46,55 @@ for (let projectButton of projectButtons) {
 }
 
 // slick-slider
-$(window).on('load resize', function() {
-  if ($(window).width() < 769) {
-    $('#slider:not(.slick-initialized)').slick({
-      dots: true,
-      slidesToShow: 3,
-      slidesToScroll: 3,
-      arrows: false,
-      responsive: [
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
-      }
-    }
-  ]
-    });
-  } else {
-    $("#slider.slick-initialized").slick("unslick");
-  }
-});
-
-// $('.feedback__items').slick({
-//       slidesToShow: 2,
-//       slidesToScroll: 2,
-//       arrows: false,  
+// $(window).on('load resize', function() {
+//   if ($(window).width() < 769) {
+//     $('#slider:not(.slick-initialized)').slick({
+//       dots: true,
+//       slidesToShow: 3,
+//       slidesToScroll: 3,
+//       arrows: false,
 //       responsive: [
 //     {
-//       breakpoint: 800,
+//       breakpoint: 600,
 //       settings: {
-//         slidesToShow: 1,
-//         slidesToScroll: 1,
-//         dots: true
+//         slidesToShow: 2,
+//         slidesToScroll: 1
 //       }
 //     },
+//     {
+//       breakpoint: 480,
+//       settings: {
+//         slidesToShow: 1,
+//         slidesToScroll: 1
+//       }
+//     }
 //   ]
+//     });
+//   } else {
+//     $("#slider.slick-initialized").slick("unslick");
+//   }
 // });
 
-const swiper = new Swiper('.swiper-container', {
+// let projects = new Swiper('.projects__items', {
+//   slidesPerView: 1,
+//   spaceBetween: 30,
+//   loop: true,
+//   lazy: true,
+//   pagination: {
+//     el: '.swiper-pagination',
+//     clickable: true,
+//   },
+// });
+
+let feedBack = new Swiper('.feedback__items', {
   slidesPerView: 1,
   spaceBetween: 30,
   loop: true,
+  lazy: true,
   pagination: {
     el: '.swiper-pagination',
+    clickable: true,
   },
-
 });
 
 // мобильное меню
@@ -148,3 +144,59 @@ themeButton.onclick = function (event) {
     });
 };
     
+(function() {
+  'use strict';
+  // breakpoint where swiper will be destroyed
+  // and switches to a dual-column layout
+  const breakpoint = window.matchMedia( '(min-width:769px)' );
+  // keep track of swiper instances to destroy later
+  let projects;
+
+  const breakpointChecker = function() {
+
+    // if larger viewport and multi-row layout needed
+    if ( breakpoint.matches === true ) {
+
+      // clean up old instances and inline styles when available
+	  if ( projects !== undefined ) projects.destroy( true, true );
+
+	  // or/and do nothing
+	  return;
+
+      // else if a small viewport and single column layout needed
+      } else if ( breakpoint.matches === false ) {
+
+        // fire small viewport version of swiper
+        return enableSwiper();
+
+      }
+
+  };
+  
+  const enableSwiper = function() {
+
+  projects = new Swiper('.projects__items', {
+  slidesPerView: 1,
+  spaceBetween: 30,
+  loop: true,
+  lazy: true,
+  breakpoints: {
+        600: {
+          slidesPerView: 2,
+          slidesPerGroup: 2,
+          spaceBetween: 20,
+        },
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+});
+
+  };
+  // keep an eye on viewport size changes
+  breakpoint.addListener(breakpointChecker);
+  // kickstart
+  breakpointChecker();
+})(); 
+
