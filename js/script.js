@@ -75,21 +75,21 @@ $(window).on('load resize', function() {
   }
 });
 
-$('.feedback__items').slick({
-      slidesToShow: 2,
-      slidesToScroll: 2,
-      arrows: false,  
-      responsive: [
-    {
-      breakpoint: 800,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        dots: true
-      }
-    },
-  ]
-});
+// $('.feedback__items').slick({
+//       slidesToShow: 2,
+//       slidesToScroll: 2,
+//       arrows: false,  
+//       responsive: [
+//     {
+//       breakpoint: 800,
+//       settings: {
+//         slidesToShow: 1,
+//         slidesToScroll: 1,
+//         dots: true
+//       }
+//     },
+//   ]
+// });
 
 // мобильное меню
   $(".header__nav-toggle").on("click", function () {
