@@ -66,6 +66,7 @@ let themeButton = document.querySelector('.header__theme');
 let themeImg = document.querySelector('.header__theme');
 let techItems = document.querySelectorAll('.item__img--switch');
 let modal = document.querySelectorAll('.modal');
+let lang = document.querySelector('.header__lang');
 themeButton.onclick = function (event) {
     event.preventDefault();
     page.classList.toggle('page--dark');
@@ -76,6 +77,8 @@ themeButton.onclick = function (event) {
     services.classList.toggle('services--light');
     technologies.classList.toggle('technologies--dark');
     technologies.classList.toggle('technologies--light');
+    lang.classList.toggle('header__lang--light');
+    lang.classList.toggle('header__lang--dark');
     for (let techItem of techItems) {
         techItem.classList.toggle('item__img--dark');
         techItem.classList.toggle('item__img--light');

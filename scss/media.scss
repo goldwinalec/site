@@ -105,11 +105,6 @@
   .header__menu-item {
     font-size: 16px;
   }
-  // .items__wrapper {
-  //   display: flex;
-  //   max-width: unset;
-  //   gap: unset;
-  // }
 }
 @media (max-width: 576px) {
   .page {
@@ -132,6 +127,18 @@
     display: flex;
     z-index: 102;
   }
+  .header__lang:focus .header__lang-link--disabled {
+    display: inline;
+  }
+
+  .header__lang:focus .header__lang-img {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+  }
+
   .main__inner {
     padding: 35px 0;
     flex-direction: column;

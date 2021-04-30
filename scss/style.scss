@@ -56,7 +56,7 @@ li {
 .header__inner {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .header__logo--dark path {
@@ -77,7 +77,7 @@ li {
 
 .header__nav {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
 }
 .header__nav-toggle {
   display: none;
@@ -111,7 +111,7 @@ li {
 
 .header__menu {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .header__menu--visible {
@@ -125,7 +125,6 @@ li {
   left: 0;
   right: 0;
   z-index: 100;
-  // background-color: rgba(#333333, 0.8);
   backdrop-filter: blur(60px);
 }
 
@@ -145,8 +144,8 @@ li {
   position: absolute;
   top: 0;
   left: 0;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   background-image: url("/images/switch-dark.svg");
   content: "";
   background-repeat: no-repeat;
@@ -157,16 +156,16 @@ li {
 
 .header__theme--dark {
   position: relative;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 22px;
   display: block;
 }
 .header__theme--light::before {
   position: absolute;
   top: 0;
   left: 0;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   background-image: url("/images/switch-light.svg");
   content: "";
   background-repeat: no-repeat;
@@ -177,11 +176,61 @@ li {
 
 .header__theme--light {
   position: relative;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 22px;
   display: block;
 }
 
+.header__lang {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  cursor: default;
+}
+
+.header__lang-img {
+  margin-left: 5px;
+  transition: transform 0.2s;
+  -webkit-transition: transform 0.2s;
+  -moz-transition: transform 0.2s;
+  -ms-transition: transform 0.2s;
+  -o-transition: transform 0.2s;
+}
+
+.header__lang-link--disabled {
+  display: none;
+  position: absolute;
+  bottom: -25px;
+  padding-top: 5px;
+  left: 0;
+  right: 0;
+}
+
+.header__lang:hover .header__lang-link--disabled {
+  display: inline;
+}
+
+.header__lang:hover .header__lang-img {
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+}
+
+.header__lang--dark .header__lang-img--dark {
+  display: inline;
+}
+.header__lang--dark .header__lang-img--light {
+  display: none;
+}
+.header__lang--light .header__lang-img--light {
+  display: inline;
+}
+.header__lang--light .header__lang-img--dark {
+  display: none;
+}
 .main__inner {
   display: flex;
   align-items: center;
