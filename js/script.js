@@ -45,58 +45,6 @@ for (let projectButton of projectButtons) {
     }
 }
 
-// slick-slider
-// $(window).on('load resize', function() {
-//   if ($(window).width() < 769) {
-//     $('#slider:not(.slick-initialized)').slick({
-//       dots: true,
-//       slidesToShow: 3,
-//       slidesToScroll: 3,
-//       arrows: false,
-//       responsive: [
-//     {
-//       breakpoint: 600,
-//       settings: {
-//         slidesToShow: 2,
-//         slidesToScroll: 1
-//       }
-//     },
-//     {
-//       breakpoint: 480,
-//       settings: {
-//         slidesToShow: 1,
-//         slidesToScroll: 1
-//       }
-//     }
-//   ]
-//     });
-//   } else {
-//     $("#slider.slick-initialized").slick("unslick");
-//   }
-// });
-
-// let projects = new Swiper('.projects__items', {
-//   slidesPerView: 1,
-//   spaceBetween: 30,
-//   loop: true,
-//   lazy: true,
-//   pagination: {
-//     el: '.swiper-pagination',
-//     clickable: true,
-//   },
-// });
-
-let feedBack = new Swiper('.feedback__items', {
-  slidesPerView: 1,
-  spaceBetween: 30,
-  loop: true,
-  lazy: true,
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-});
-
 // мобильное меню
   $(".header__nav-toggle").on("click", function () {
     $("body").toggleClass("page--disabled");
@@ -144,6 +92,7 @@ themeButton.onclick = function (event) {
     });
 };
     
+// слайдер
 (function() {
   'use strict';
   // breakpoint where swiper will be destroyed
@@ -200,3 +149,14 @@ themeButton.onclick = function (event) {
   breakpointChecker();
 })(); 
 
+
+let feedBack = new Swiper('.feedback__items', {
+  slidesPerView: 1,
+  spaceBetween: 30,
+  loop: true,
+  lazy: true,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+});
