@@ -58,42 +58,52 @@ for (let projectButton of projectButtons) {
   });
 // переключатель темы
 let page = document.querySelector('.page');
-let headerLogo = document.querySelector('.header__logo');
-let services = document.querySelector('.services');
-let servImgs = document.querySelectorAll('.services__img')
-let technologies = document.querySelector('.technologies');
-let themeButton = document.querySelector('.header__theme');
-let themeImg = document.querySelector('.header__theme');
-let techItems = document.querySelectorAll('.item__img--switch');
-let modal = document.querySelectorAll('.modal');
-let lang = document.querySelector('.header__lang');
-themeButton.onclick = function (event) {
-    event.preventDefault();
-    page.classList.toggle('page--dark');
-    page.classList.toggle('page--light');
-    headerLogo.classList.toggle('header__logo--dark');
-    headerLogo.classList.toggle('header__logo--light');
-    services.classList.toggle('services--dark');
-    services.classList.toggle('services--light');
-    technologies.classList.toggle('technologies--dark');
-    technologies.classList.toggle('technologies--light');
-    lang.classList.toggle('header__lang--light');
-    lang.classList.toggle('header__lang--dark');
-    for (let techItem of techItems) {
-        techItem.classList.toggle('item__img--dark');
-        techItem.classList.toggle('item__img--light');
-    };
-    for (let servImg of servImgs) {
-        servImg.classList.toggle('services__img--dark');
-        servImg.classList.toggle('services__img--light');
-    };
-    themeImg.classList.toggle('header__theme--dark');
-    themeImg.classList.toggle('header__theme--light');
-    modal.forEach(function (item) {
-        item.classList.toggle('modal--dark')
-        item.classList.toggle('modal--light');
-    });
+const toggleThemeButton = document.querySelector('.header__theme');
+
+let currentTheme = null;
+const defaultTheme = "dark";
+
+const initTheme = () => {
+  // проверяем есть ли в локал сторадже какое-либо значение
+  // по ключу "theme", если нет, то присваиваем дефолтное значение темы
+  // иначе просто в переменную currentTheme назначаем
+  // тему которая была выбрана ранее
+  if (!localStorage.getItem("theme")) {
+    localStorage.setItem("theme", defaultTheme);
+    currentTheme = "light";
+  } else {
+    currentTheme = localStorage.getItem("theme");
+  }
+  
+  changedColor();
 };
+
+const changedColor = () => {
+  if (currentTheme === "dark") {
+    page.classList.add('page--dark');
+    page.classList.remove('page--light');
+  } else {
+    page.classList.remove('page--dark');
+    page.classList.add('page--light');
+  }
+};
+
+//смена темы, перезаписываем тему в localStorage
+//toggle функция темы
+toggleThemeButton.addEventListener("click", () => {
+  if (localStorage.getItem("theme") === "dark") {
+    localStorage.setItem("theme", "light");
+    currentTheme = "light";
+  } else {
+    localStorage.setItem("theme", "dark");
+    currentTheme = "dark";
+  }
+
+  changedColor();
+});
+
+initTheme();
+
     
 // слайдер
 (function() {
