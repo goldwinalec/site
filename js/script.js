@@ -36,7 +36,7 @@ for (let projectButton of projectButtons) {
         page.classList.add('page--disabled');
         modal.addEventListener("click", (event) => {
             if (event.target.closest(".modal__close") ||
-                event.target.classList.contains("modal__inner") ||
+                event.target.classList.contains("modal__inner")||
                 event.target.classList.contains("modal")) {
                 modal.classList.remove('modal--opened');
                 page.classList.remove('page--disabled');
