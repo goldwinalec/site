@@ -1,95 +1,116 @@
+"use strict";
+
 // кнопка возврата к началу страницы
-$(".top-btn").removeClass("top-btn--visible");
+const topButton = document.getElementById("top-btn");
 
-$(window).scroll(function () {
-    if ($(this).scrollTop() > 200) {
-        $(".top-btn").addClass("top-btn--visible");
-        $(".top-btn").removeClass("top-btn--invisible");
-    } else {
-        $(".top-btn").removeClass("top-btn--visible");
-        $(".top-btn").addClass("top-btn--invisible");
-    }
+window.addEventListener("scroll", function () {
+  scrollFunction();
 });
-
-$(".top-btn").click(function () {
-    $("html, body").animate({ scrollTop: 0 }, 1000);
-});
+const scrollFunction = function () {
+  if (
+    document.body.scrollTop > 500 ||
+    document.documentElement.scrollTop > 500
+  ) {
+    topButton.classList.add("top-btn--visible");
+  } else {
+    topButton.classList.remove("top-btn--visible");
+  }
+};
+const scrollToTop = function () {
+  document.body.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+  document.documentElement.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};
 
 // плавный переход по якорям
-$(document).on('click', '.header__menu-link', function () {
-    var linkID = $(this).attr('href');
-    $('html, body').animate({
-        scrollTop: $(linkID).offset().top
-    }, 'slow');
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (evt) {
+    evt.preventDefault();
+    document.querySelector(this.getAttribute("href")).scrollIntoView({
+      behavior: "smooth",
+    });
+  });
 });
 
 // открытие-закрытие модального окна
-let projectButtons = document.querySelectorAll('.items__img');
-let closeButton = document.querySelector('.modal__close');
+let projectButtons = document.querySelectorAll(".items__img");
+let closeButton = document.querySelector(".modal__close");
 
 for (let projectButton of projectButtons) {
-    projectButton.onclick = function (event) {
-        event.preventDefault();
-        let modalName = this.getAttribute('data-modal');
-        let modal = document.querySelector(`.modal[data-modal="` + modalName + `"]`);
-        modal.classList.add('modal--opened');
-        page.classList.add('page--disabled');
-        modal.addEventListener("click", (event) => {
-            if (event.target.closest(".modal__close") ||
-                event.target.classList.contains("modal__inner")||
-                event.target.classList.contains("modal")) {
-                modal.classList.remove('modal--opened');
-                page.classList.remove('page--disabled');
-            }
-        });
-    }
+  projectButton.onclick = function (evt) {
+    evt.preventDefault();
+    let modalName = this.getAttribute("data-modal");
+    let modal = document.querySelector(
+      `.modal[data-modal="` + modalName + `"]`
+    );
+    modal.classList.add("modal--opened");
+    page.classList.add("page--disabled");
+    modal.addEventListener("click", (evt) => {
+      if (
+        evt.target.closest(".modal__close") ||
+        evt.target.classList.contains("modal__inner") ||
+        evt.target.classList.contains("modal")
+      ) {
+        modal.classList.remove("modal--opened");
+        page.classList.remove("page--disabled");
+      }
+    });
+  };
 }
 
 // мобильное меню
-  $(".header__nav-toggle").on("click", function () {
-    $("body").toggleClass("page--disabled");
-    $(".header__menu").toggleClass("header__menu--visible");
-    $(".header__nav-line").toggleClass("header__nav-line--active");
-    $(".header__menu-link").on("click", function () {
-      $(".header__menu").removeClass("header__menu--visible");
-      $(".header__nav-line").removeClass("header__nav-line--active");
-      $("body").removeClass("page--disabled");
-    });
+const toggleNav = document.querySelector(".header__nav-toggle");
+const headerNav = document.querySelector(".header__menu");
+const navLink = document.querySelectorAll(".header__menu-link");
+const body = document.querySelector("body");
+
+toggleNav.addEventListener("click", function () {
+  toggleNav.classList.toggle("header__nav-toggle--active");
+  headerNav.classList.toggle("header__menu--visible");
+  body.classList.toggle("page--disabled");
+});
+
+navLink.forEach((link) => {
+  link.addEventListener("click", function () {
+    toggleNav.classList.remove("header__nav-toggle--active");
+    headerNav.classList.remove("header__menu--visible");
+    body.classList.remove("page--disabled");
   });
+});
+
 // переключатель темы
-let page = document.querySelector('.page');
-const toggleThemeButton = document.querySelector('.header__theme');
+let page = document.querySelector(".page");
+const toggleThemeButton = document.querySelector(".header__theme");
 
 let currentTheme = null;
 const defaultTheme = "dark";
 
 const initTheme = () => {
-  // проверяем есть ли в локал сторадже какое-либо значение
-  // по ключу "theme", если нет, то присваиваем дефолтное значение темы
-  // иначе просто в переменную currentTheme назначаем
-  // тему которая была выбрана ранее
   if (!localStorage.getItem("theme")) {
     localStorage.setItem("theme", defaultTheme);
     currentTheme = "light";
   } else {
     currentTheme = localStorage.getItem("theme");
   }
-  
+
   changedColor();
 };
 
 const changedColor = () => {
   if (currentTheme === "dark") {
-    page.classList.add('page--dark');
-    page.classList.remove('page--light');
+    page.classList.add("page--dark");
+    page.classList.remove("page--light");
   } else {
-    page.classList.remove('page--dark');
-    page.classList.add('page--light');
+    page.classList.remove("page--dark");
+    page.classList.add("page--light");
   }
 };
 
-//смена темы, перезаписываем тему в localStorage
-//toggle функция темы
 toggleThemeButton.addEventListener("click", () => {
   if (localStorage.getItem("theme") === "dark") {
     localStorage.setItem("theme", "light");
@@ -104,72 +125,84 @@ toggleThemeButton.addEventListener("click", () => {
 
 initTheme();
 
-    
 // слайдер
-(function() {
-  'use strict';
-  // breakpoint where swiper will be destroyed
-  // and switches to a dual-column layout
-  const breakpoint = window.matchMedia( '(min-width:769px)' );
-  // keep track of swiper instances to destroy later
+(function () {
+  const breakpoint = window.matchMedia("(min-width:769px)");
   let projects;
 
-  const breakpointChecker = function() {
-
-    // if larger viewport and multi-row layout needed
-    if ( breakpoint.matches === true ) {
-
-      // clean up old instances and inline styles when available
-	  if ( projects !== undefined ) projects.destroy( true, true );
-
-	  // or/and do nothing
-	  return;
-
-      // else if a small viewport and single column layout needed
-      } else if ( breakpoint.matches === false ) {
-
-        // fire small viewport version of swiper
-        return enableSwiper();
-
-      }
-
+  const breakpointChecker = function () {
+    if (breakpoint.matches === true) {
+      if (projects !== undefined) projects.destroy(true, true);
+    } else if (breakpoint.matches === false) {
+      return enableSwiper();
+    }
   };
-  
-  const enableSwiper = function() {
 
-  projects = new Swiper('.projects__items', {
-  slidesPerView: 1,
-  spaceBetween: 30,
-  loop: true,
-  lazy: true,
-  breakpoints: {
-        600: {
+  const enableSwiper = function () {
+    projects = new Swiper(".projects__items", {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      lazy: true,
+      breakpoints: {
+        768: {
           slidesPerView: 2,
           slidesPerGroup: 2,
           spaceBetween: 20,
         },
-  },
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-});
-
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
   };
-  // keep an eye on viewport size changes
   breakpoint.addListener(breakpointChecker);
-  // kickstart
   breakpointChecker();
-})(); 
+})();
 
-
-let feedBack = new Swiper('.feedback__items', {
+let feedBack = new Swiper(".feedback__items", {
   slidesPerView: 1,
   spaceBetween: 30,
   loop: true,
   lazy: true,
   pagination: {
-    el: '.swiper-pagination',
+    el: ".swiper-pagination",
     clickable: true,
   },
+});
+
+const scrollElements = document.querySelectorAll(".js-scroll");
+const elementInView = (el, dividend = 1) => {
+  const elementTop = el.getBoundingClientRect().top;
+  return (
+    elementTop <=
+    (window.innerHeight || document.documentElement.clientHeight) / dividend
+  );
+};
+
+const elementOutofView = (el) => {
+  const elementTop = el.getBoundingClientRect().top;
+  return (
+    elementTop > (window.innerHeight || document.documentElement.clientHeight)
+  );
+};
+
+const displayScrollElement = (element) => {
+  element.classList.add("scrolled");
+};
+const hideScrollElement = (element) => {
+  element.classList.remove("scrolled");
+};
+const handleScrollAnimation = () => {
+  scrollElements.forEach((el) => {
+    if (elementInView(el, 1.25)) {
+      displayScrollElement(el);
+    } else if (elementOutofView(el)) {
+      hideScrollElement(el);
+    }
+  });
+};
+window.addEventListener("scroll", () => {
+  handleScrollAnimation();
 });
