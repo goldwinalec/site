@@ -120,17 +120,12 @@
     font-size: 16px;
   }
   .header__menu {
-    opacity: 0;
-    visibility: hidden;
+    display: none;
     position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
@@ -151,8 +146,10 @@
     z-index: 10;
   }
   .header__menu--visible {
-    opacity: 1;
-    visibility: visible;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
   }
   .header__menu-item + .header__menu-item {
     margin: 0;
