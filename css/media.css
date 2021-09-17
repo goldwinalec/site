@@ -148,11 +148,6 @@
     height: 100vh;
     -webkit-backdrop-filter: blur(60px);
             backdrop-filter: blur(60px);
-    transition: all 0.3s;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -ms-transition: all 0.3s;
-    -o-transition: all 0.3s;
     z-index: 10;
   }
   .header__menu--visible {
