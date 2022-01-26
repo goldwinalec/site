@@ -130,7 +130,7 @@
   }
   .header__nav-toggle {
     display: flex;
-    z-index: 12;
+    z-index: 11;
     cursor: pointer;
   }
   .header__lang:focus .header__lang-link--disabled {
@@ -223,7 +223,7 @@
     margin: 5px;
   }
   .devices__laptop {
-    background-image: url("/images/tablet.svg");
+    background-image: url('/images/tablet.svg');
     background-size: 100% 100%;
     height: 244px;
     width: 340px;

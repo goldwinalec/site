@@ -150,7 +150,7 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    z-index: 12;
+    z-index: 11;
     cursor: pointer;
   }
   .header__lang:focus .header__lang-link--disabled {
