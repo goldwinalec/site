@@ -69,7 +69,7 @@ body {
 }
 
 .page--dark {
-  background-color: #222222;
+  background-color: #111111;
   color: #ffffff;
 }
 
@@ -220,7 +220,7 @@ li {
   width: 18px;
   height: 18px;
   background-image: url("/images/switch-dark.svg");
-  content: "";
+  content: '';
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 0;
@@ -241,7 +241,7 @@ li {
   width: 18px;
   height: 18px;
   background-image: url("/images/switch-light.svg");
-  content: "";
+  content: '';
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 0;
@@ -383,7 +383,7 @@ li {
 
 .page--dark .services,
 .page--dark .technologies {
-  background-color: #333333;
+  background-color: #222222;
 }
 
 .page--light .services {
@@ -442,7 +442,7 @@ li {
 
 .services__list-item,
 .table__list-item {
-  list-style-type: "\2014";
+  list-style-type: '\2014';
   padding-left: 10px;
 }
 
@@ -475,13 +475,6 @@ li {
 
 .items__img {
   display: block;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
-  filter: brightness(70%);
-  -webkit-filter: brightness(70%);
   transition: all 0.3s;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
@@ -491,8 +484,8 @@ li {
 
 .items__img:hover {
   cursor: pointer;
-  filter: brightness(100%);
-  -webkit-filter: brightness(100%);
+  -webkit-box-shadow: 4px 4px 8px 0px rgba(102, 102, 102, 0.2);
+          box-shadow: 4px 4px 8px 0px rgba(102, 102, 102, 0.2);
 }
 
 .items__slide:nth-child(1) {
@@ -599,7 +592,7 @@ li {
 
 .feedback__item::before {
   position: absolute;
-  content: "";
+  content: '';
   width: 30px;
   height: 27px;
   background-image: url("/images/quote.svg");
@@ -895,7 +888,7 @@ li {
   -o-border-radius: 50%;
   transition: all 0.3s;
   cursor: pointer;
-  z-index: 10;
+  z-index: 9;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -ms-transition: all 0.3s;
