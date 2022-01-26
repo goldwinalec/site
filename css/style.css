@@ -88,9 +88,16 @@ body {
   position: fixed;
   width: 100%;
   height: 100%;
-  background: #111 url("/images/loader.svg") no-repeat center center;
   background-size: 50px 50px;
   z-index: 11;
+}
+
+.page--dark .preloader {
+  background: #111 url("/images/loader.svg") no-repeat center center;
+}
+
+.page--light .preloader {
+  background: #fff url("/images/loader.svg") no-repeat center center;
 }
 
 a {
