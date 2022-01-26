@@ -165,7 +165,7 @@ li {
           justify-content: space-between;
   width: 30px;
   height: 20px;
-  z-index: 101;
+  z-index: 10;
 }
 
 .header__nav-line {
