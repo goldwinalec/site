@@ -15,20 +15,30 @@ body {
   @extend %raleway-regular;
   font-size: 18px;
   line-height: 22px;
+  transition: background 0.5s ease, color 0.5s ease;
 }
 
 .page--dark {
-  background-color: #111111;
+  background: #111111;
   color: #ffffff;
 }
 
 .page--light {
-  background-color: #fff;
+  background: #fff;
   color: #333;
 }
 
 .page--disabled {
   overflow-y: hidden;
+}
+
+.preloader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #111 url('/images/loader.svg') no-repeat center center;
+  background-size: 50px 50px;
+  z-index: 11;
 }
 
 a {
@@ -142,7 +152,7 @@ li {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 0;
-  z-index: 1000;
+  z-index: 1;
 }
 
 .header__theme {
@@ -163,7 +173,7 @@ li {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 0;
-  z-index: 1000;
+  z-index: 1;
 }
 
 .header__lang {
@@ -279,11 +289,12 @@ li {
 .projects,
 .technologies {
   padding: 80px 0;
+  transition: background 0.5s ease;
 }
 
 .page--dark .services,
 .page--dark .technologies {
-  background-color: #222222;
+  background: #222222;
 }
 
 .page--light .services {
